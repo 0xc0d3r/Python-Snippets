@@ -1,7 +1,7 @@
 import MySQLdb,urllib,urllib2,cookielib
 from BeautifulSoup import BeautifulSoup
 
-db = MySQLdb.connect("localhost","root","iiitn","MNC")
+db = MySQLdb.connect("localhost","<username>","<password>","MNC")
 c = db.cursor()
 
 companies = open("MNC_List.txt","r")
@@ -59,7 +59,7 @@ for company in comp_list:
 	print "Name : "+name
 	print "Tagline: "+tagline
 	print "Industry : "+industry
-	print "FOunded : "+founded
+	print "Founded : "+founded
 	print "Founders : "+founders
 	print "Hq : "+hq
 	print "Keypeople"+kp
@@ -71,5 +71,5 @@ for company in comp_list:
 	c.execute(query)
 	db.commit()
 	records+=1
-	print "[+] success... "+str(records)+ " record(s) inserted..."
+	print "[+] Success... "+str(records)+ " record(s) inserted!"
 	
